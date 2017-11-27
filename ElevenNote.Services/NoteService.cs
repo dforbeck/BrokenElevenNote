@@ -23,7 +23,6 @@ namespace ElevenNote.Services
             var entity =
                 new Note()
                 {
-                    OwnerId = _userId,
                     Title = model.Title,
                     Content = model.Content,
                     CreatedUtc = DateTimeOffset.Now
@@ -88,7 +87,7 @@ namespace ElevenNote.Services
                         .Single(e => e.NoteId == model.NoteId && e.OwnerId == _userId);
 
                 entity.Title = model.Title;
-                entity.Content = model.Content;
+                entity.Content = model.Title;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;

@@ -31,7 +31,7 @@ namespace ElevenNote.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View();
             }
 
             var service = CreateNoteService();
@@ -92,7 +92,7 @@ namespace ElevenNote.Web.Controllers
 
             if (service.UpdateNote(model))
             {
-                TempData["SaveResult"] = "Your note was updated";
+                TempData["Saveresult"] = "Your note was updated";
                 return RedirectToAction("Index");
             }
 

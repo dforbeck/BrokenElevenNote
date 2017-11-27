@@ -64,8 +64,8 @@ namespace ElevenNote.Web.Models
 
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
+        //[Required] // should really put this back when I'm done testing
+        //[EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 

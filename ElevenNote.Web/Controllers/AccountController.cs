@@ -16,7 +16,7 @@ namespace ElevenNote.Web.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private ApplicationSignInManager _signInManager;
+        private ApplicationSignInManager __signInManager;
         private ApplicationUserManager _userManager;
 
         public AccountController()

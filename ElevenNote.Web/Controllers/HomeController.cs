@@ -10,6 +10,8 @@ namespace ElevenNote.Web.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Name = "Test";
+
             return View();
         }
 
