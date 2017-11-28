@@ -1,10 +1,11 @@
 ﻿using ElevenNoteMobileApp.Contracts;
+using ElevenNoteMobileApp.Pages;
 using ElevenNoteMobileApp.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 // Define dependencies for injection.
-[assembly: Xamarin.Forms.Dependency(typeof(FakeNoteService))]
+//[assembly: Xamarin.Forms.Dependency(typeof(FakeNoteService))]
 namespace ElevenNoteMobileApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -13,13 +14,13 @@ namespace ElevenNoteMobileApp
         /// <summary>
         ///  Note service access. We set our dependencies above the namespace declaration.
         /// </summary>
-        internal static readonly INoteService NoteService = DependencyService.Get<INoteService>();
+        internal static readonly WebNoteService NoteService = new WebNoteService();
 
         public App()
         {
             InitializeComponent();
 
-            MainPage = new ElevenNoteMobileApp.MainPage();
+            this.MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

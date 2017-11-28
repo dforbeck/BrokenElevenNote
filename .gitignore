@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /ElevenNote.API/Properties/PublishProfiles/auri-efa-net301-nov2017-elevennote-api - Web Deploy.pubxml
+*.pubxml

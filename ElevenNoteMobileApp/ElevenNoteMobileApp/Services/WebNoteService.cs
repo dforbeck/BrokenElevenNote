@@ -15,7 +15,7 @@ namespace ElevenNoteMobileApp.Services
     internal class WebNoteService : INoteService
     {
         public static string BearerToken { get; set; }
-        private const string _apiUrl = "https://auri-efa-elevennoteapi-april2017.azurewebsites.net";
+        private const string _apiUrl = "https://auri-efa-net301-nov2017-elevennote-api.azurewebsites.net";
 
         /// <summary>
         /// Attempts to log the user in.
