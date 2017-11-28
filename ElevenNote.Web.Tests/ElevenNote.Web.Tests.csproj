@@ -70,9 +70,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CreatePost.cs" />
+    <Compile Include="Controllers\NoteControllerTests\CreatePost.cs" />
     <Compile Include="Controllers\FakeNoteService.cs" />
-    <Compile Include="Controllers\NoteControllerTestsBase.cs" />
+    <Compile Include="Controllers\NoteControllerTests\NoteControllerTestsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using ElevenNote.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ElevenNote.Web.Tests.Controllers
+namespace ElevenNote.Web.Tests.Controllers.NoteControllerTests
 {
     [TestClass]
     public class CreatePost : NoteControllerTestsBase

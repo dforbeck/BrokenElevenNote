@@ -1,9 +1,9 @@
-﻿using ElevenNote.Services;
+﻿using System;
+using ElevenNote.Services;
 using ElevenNote.Web.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
-namespace ElevenNote.Web.Tests.Controllers
+namespace ElevenNote.Web.Tests.Controllers.NoteControllerTests
 {
     [TestClass]
     public abstract class NoteControllerTestsBase
