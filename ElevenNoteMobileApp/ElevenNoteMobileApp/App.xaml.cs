@@ -13,7 +13,7 @@ namespace ElevenNoteMobileApp
 		{
 			InitializeComponent();
 
-			MainPage = new ElevenNoteMobileApp.MainPage();
+			MainPage = null;
 		}
 
 		protected override void OnStart ()
