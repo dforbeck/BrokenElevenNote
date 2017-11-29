@@ -15,6 +15,8 @@ namespace ElevenNoteMobileApp.Pages
         public LoginPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasBackButton(this, false);
         }
 
         private async void BtnLogin_OnClicked(object sender, EventArgs e)

@@ -5,7 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 // Define dependencies for injection.
-//[assembly: Xamarin.Forms.Dependency(typeof(FakeNoteService))]
+[assembly: Xamarin.Forms.Dependency(typeof(FakeNoteService))]
 namespace ElevenNoteMobileApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -14,7 +14,7 @@ namespace ElevenNoteMobileApp
         /// <summary>
         ///  Note service access. We set our dependencies above the namespace declaration.
         /// </summary>
-        internal static readonly WebNoteService NoteService = new WebNoteService();
+        internal static readonly INoteService NoteService = DependencyService.Get<INoteService>();
 
         public App()
         {
