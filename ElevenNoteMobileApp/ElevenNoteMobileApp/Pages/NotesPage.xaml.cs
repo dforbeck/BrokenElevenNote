@@ -47,7 +47,11 @@ namespace ElevenNoteMobileApp.Pages
 
             this.ToolbarItems.Add(new ToolbarItem("Log Out", null, async () =>
             {
-                if (await DisplayAlert("Well?", "Are you sure you want to quit back to the login screen?", "Yep", "Nope"))
+                if (await DisplayAlert(
+                    ElevenNoteMobileAppResources.StringResources.DialogTitle_Confirm, 
+                    "Are you sure you want to quit back to the login screen?", 
+                    ElevenNoteMobileAppResources.StringResources.Dialog_Confirm, 
+                    ElevenNoteMobileAppResources.StringResources.Dialog_Cancel))
                 {
                     await Navigation.PopAsync(true);
                 }

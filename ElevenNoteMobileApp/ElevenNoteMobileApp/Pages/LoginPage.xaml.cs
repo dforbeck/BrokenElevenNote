@@ -24,7 +24,10 @@ namespace ElevenNoteMobileApp.Pages
             // Make sure they filled all the fields.
             if (string.IsNullOrWhiteSpace(fldUsername.Text) || string.IsNullOrWhiteSpace(fldPassword.Text))
             {
-                await DisplayAlert("Whoops", "Please enter a username and password.", "Okie Dokie");
+                await DisplayAlert(
+                    ElevenNoteMobileAppResources.StringResources.DialogTitle_Error, 
+                    "Please enter a username and password.",
+                    ElevenNoteMobileAppResources.StringResources.Dialog_Confirm);
                 return;
             }
 
@@ -44,7 +47,10 @@ namespace ElevenNoteMobileApp.Pages
                     // Let them know if login failed.
                     if (!loggedIn)
                     {
-                        await DisplayAlert("Whoops", "Login failed.", "Okie Dokie");
+                        await DisplayAlert(
+                            ElevenNoteMobileAppResources.StringResources.DialogTitle_Error, 
+                            "Login failed.",
+                            ElevenNoteMobileAppResources.StringResources.Dialog_Confirm);
                         fldUsername.IsEnabled = true;
                         fldPassword.IsEnabled = true;
                         btnLogin.IsEnabled = true;

@@ -37,18 +37,28 @@ namespace ElevenNoteMobileApp.Pages
                 this.ToolbarItems.Add(new ToolbarItem("Delete", null, async () =>
                 {
                     // Confirm they want to delete.
-                    if (await DisplayAlert("Well?", "Are you sure you want to delete this note?", "Yep", "Nope"))
+                    if (await DisplayAlert(
+                        ElevenNoteMobileAppResources.StringResources.DialogTitle_Confirm, 
+                        "Are you sure you want to delete this note?",
+                        ElevenNoteMobileAppResources.StringResources.Dialog_Confirm,
+                        ElevenNoteMobileAppResources.StringResources.Dialog_Cancel))
                     {
                         await App.NoteService.Delete(_noteId.Value).ContinueWith(async task =>
                         {
                             if (task.Result)
                             {
-                                await DisplayAlert("Great!", "The note has been deleted.", "Okie Dokie");
+                                await DisplayAlert(
+                                    ElevenNoteMobileAppResources.StringResources.DialogTitle_Confirm, 
+                                    "The note has been deleted.",
+                                    ElevenNoteMobileAppResources.StringResources.Dialog_Confirm);
                                 await Navigation.PopAsync(true);
                             }
                             else
                             {
-                                await DisplayAlert("Bummer", "The note could not be deleted. Are you sure it's still there?", "Okie Dokie");
+                                await DisplayAlert(
+                                    ElevenNoteMobileAppResources.StringResources.DialogTitle_Error, 
+                                    "The note could not be deleted. Are you sure it's still there?",
+                                    ElevenNoteMobileAppResources.StringResources.Dialog_Confirm);
                             }
                         }, TaskScheduler.FromCurrentSynchronizationContext());
                     }
@@ -67,8 +77,10 @@ namespace ElevenNoteMobileApp.Pages
                     // Let them know and pop back to the notes list view.
                     if (note == null)
                     {
-                        await DisplayAlert("Whoops", "That note couldn't be found. Maybe it's been deleted?",
-                            "Okie Dokie");
+                        await DisplayAlert(
+                            ElevenNoteMobileAppResources.StringResources.DialogTitle_Error, 
+                            "That note couldn't be found. Maybe it's been deleted?",
+                            ElevenNoteMobileAppResources.StringResources.Dialog_Confirm);
                         await Navigation.PopAsync();
                         return;
                     }
@@ -110,7 +122,10 @@ namespace ElevenNoteMobileApp.Pages
                         fldProgressMessage.Text = "";
                         pleaseWait.IsRunning = false;
                         panProgress.IsVisible = false;
-                        await DisplayAlert("Great!", "The note's been updated.", "Cool!");
+                        await DisplayAlert(
+                            ElevenNoteMobileAppResources.StringResources.DialogTitle_Confirm, 
+                            "The note's been updated.",
+                            ElevenNoteMobileAppResources.StringResources.Dialog_Confirm);
                         await Navigation.PopAsync(true);
                     }
                     else
@@ -118,7 +133,10 @@ namespace ElevenNoteMobileApp.Pages
                         fldProgressMessage.Text = "";
                         pleaseWait.IsRunning = false;
                         panProgress.IsVisible = false;
-                        await DisplayAlert("Bummer", "The note could not be saved. Are you connected?", "Okie Dokie");
+                        await DisplayAlert(
+                            ElevenNoteMobileAppResources.StringResources.DialogTitle_Error, 
+                            "The note could not be saved. Are you connected?",
+                            ElevenNoteMobileAppResources.StringResources.Dialog_Confirm);
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext());
             }
@@ -127,14 +145,17 @@ namespace ElevenNoteMobileApp.Pages
                 // Create the note.
                 await App.NoteService.AddNew(new NoteCreate()
                 {
-                    Title = fldTitle.Text.Trim(),
-                    Content = fldNoteDetails.Text.Trim()
+                    Title = fldTitle.Text?.Trim() ?? "No Title",
+                    Content = fldNoteDetails.Text?.Trim() ?? ""
                 }).ContinueWith(async task =>
                 {
                     var success = task.Result;
                     if (success)
                     {
-                        await DisplayAlert("Great!", "The note was added.", "Cool!");
+                        await DisplayAlert(
+                            ElevenNoteMobileAppResources.StringResources.DialogTitle_Confirm, 
+                            "The note was added.",
+                            ElevenNoteMobileAppResources.StringResources.Dialog_Confirm);
                         await Navigation.PopAsync(true);
                     }
                     else
@@ -143,7 +164,10 @@ namespace ElevenNoteMobileApp.Pages
                         pleaseWait.IsRunning = false;
                         panProgress.IsVisible = false;
 
-                        await DisplayAlert("Bummer", "The note could not be saved. Are you connected?", "Okie Dokie");
+                        await DisplayAlert(
+                            ElevenNoteMobileAppResources.StringResources.DialogTitle_Error,
+                            "The note could not be saved. Are you connected?",
+                            ElevenNoteMobileAppResources.StringResources.Dialog_Confirm);
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext());
 

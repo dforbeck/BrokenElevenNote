@@ -146,6 +146,10 @@
       <Project>{934b65ef-bb89-4538-a573-8019cd57282a}</Project>
       <Name>ElevenNote.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ElevenNoteMobileAppResources\ElevenNoteMobileAppResources.csproj">
+      <Project>{a00b647d-415d-4689-af5f-061734241aeb}</Project>
+      <Name>ElevenNoteMobileAppResources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\starred.png" />
