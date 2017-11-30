@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ElevenNoteMobileApp.Contracts;
+using ElevenNoteMobileApp.Pages;
 using ElevenNoteMobileApp.Services;
 using Xamarin.Forms;
 
@@ -18,10 +19,10 @@ namespace ElevenNoteMobileApp
 		{
 			InitializeComponent();
 
-			MainPage = new ElevenNoteMobileApp.MainPage();
+		    this.MainPage = new NavigationPage(new LoginPage());
 		}
 
-		protected override void OnStart ()
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

@@ -140,6 +140,18 @@
       <Name>ElevenNote.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\starred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\elevenfiftylogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notstarred.png" />
+  </ItemGroup>
   <Import Project="..\ElevenNoteMobileApp\ElevenNoteMobileApp.projitems" Label="Shared" Condition="Exists('..\ElevenNoteMobileApp\ElevenNoteMobileApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
