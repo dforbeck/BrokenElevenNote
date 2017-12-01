@@ -50,11 +50,16 @@ namespace ElevenNoteMobileApp.Pages
 	                    return;
 	                }
 
-	                // If login was successful, send them to the notes list page.
-	                pleaseWait.IsRunning = false;
+                    // If login was successful, send them to the notes list page.
 	                await Navigation.PushAsync(new NotesPage(), true);
+	                fldUsername.IsEnabled = true;
+	                fldPassword.IsEnabled = true;
+	                btnLogin.IsEnabled = true;
+	                fldUsername.Text = string.Empty;
+	                fldPassword.Text = string.Empty;
+	                pleaseWait.IsRunning = false;
 
-	            }, TaskScheduler.FromCurrentSynchronizationContext());
+                }, TaskScheduler.FromCurrentSynchronizationContext());
 	    }
 
     }

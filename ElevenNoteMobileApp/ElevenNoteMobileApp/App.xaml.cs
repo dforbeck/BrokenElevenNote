@@ -8,7 +8,7 @@ using ElevenNoteMobileApp.Services;
 using Xamarin.Forms;
 
 // Define dependencies for injection.
-[assembly: Xamarin.Forms.Dependency(typeof(FakeNoteService))]
+[assembly: Xamarin.Forms.Dependency(typeof(RealNoteService))]
 namespace ElevenNoteMobileApp
 {
 	public partial class App : Application

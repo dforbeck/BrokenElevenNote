@@ -14,6 +14,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Contracts\INoteService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\NoteListItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\OauthBearerTokenResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -27,6 +28,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Services\FakeNoteService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RealNoteService.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
