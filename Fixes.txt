@@ -1,0 +1,5 @@
+Account controller
+			private ApplicationSignInManager _signInManager; 			   
+			THERE WAS A DOUBLE UNDERSCORE
+
+			SPACE IN THE INDEX VIEW FILE NAME

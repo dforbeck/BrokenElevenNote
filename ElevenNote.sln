@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevenNote.Data", "ElevenNo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevenNote.Web.Tests", "ElevenNote.Web.Tests\ElevenNote.Web.Tests.csproj", "{3DFB6DCB-8743-403C-9F31-7891A98C7109}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3C3B9DC9-3904-4DDD-8327-D732B8AC80AC}"
+	ProjectSection(SolutionItems) = preProject
+		Fixes.txt = Fixes.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
