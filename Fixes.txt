@@ -3,3 +3,47 @@ Account controller
 			THERE WAS A DOUBLE UNDERSCORE
 
 			SPACE IN THE INDEX VIEW FILE NAME
+
+
+Differences between 
+
+
+ORIGINAL HAS THE FOLLOWING:
+
+(1) packages.config
+<package id="Microsoft.Net.Compilers" version="3.1.1" targetFramework="net46" developmentDependency="true" />
+
+ALTHOUGH MIGHT BE FROM MY COMPILER UPDATE
+
+(2)NoteServices.cs
+ public bool CreateNote(NoteCreate model)
+ new Note()
+                {
+                    OwnerId = _userId,
+CREATE NOTE BY BY USER ID
+
+(3)AccountController.cs
+Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+GETUSERMANAGER USED
+
+(4) HomeController.cs
+public ActionResult Index()
+        {
+            return View();
+        }
+DOES NOTE CONTAIN THE VIEWBAG TITLE OF TEST
+
+(5) AccountViewModel.cs
+public class RegisterViewModel
+    {
+        [Required]
+        [EmailAddress]
+CONTAINS THE ABOVE TWO LINES
+
+(6)Index.cshtml
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+DOES NOT CONTAIN THE ABOVE
+
